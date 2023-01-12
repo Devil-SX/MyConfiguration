@@ -11,8 +11,20 @@ call plug#begin()
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 "   - Avoid using standard Vim directory names like 'plugin'
 
-Plug 'preservim/nerdtree'
+Plug 'mhinz/vim-startify'
+
 Plug 'altercation/vim-colors-solarized'
+
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'ycm-core/YouCompleteMe'
+
+Plug 'preservim/tagbar'
+
+Plug 'easymotion/vim-easymotion'
+Plug 'Yggdroot/indentLine'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -24,6 +36,8 @@ call plug#end()
 
 set nocompatible              " disable vi compatible
 " Is "set nocompatible" useless? See related discussion on Stack Overflow
+
+set encoding=utf8
 
 
 " All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
@@ -102,24 +116,35 @@ set noerrorbells visualbell t_vb=  " annonying!
 set smartindent " 开启新行使用智能自动缩进
 
 
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR> " 用空格键来开关折叠
+" Map settings
+nmap <leader>q :q<CR>
+nmap <leader>w :wall<CR>
+nmap <leader>x :wqall<CR>
+
+" NerdTree
+nmap <leader>t :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+
+" TagBar
+nmap <leader>b :TagbarToggle<CR>
+
+" EasyMotion
+nmap ss <Plug>(easymotion-s2)
+
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
 " for movement, rather than using more efficient movement commands, is also a
 " bad habit. The former is enforceable through a .vimrc, while we don't know
 " how to prevent the latter.
 " Do this in normal mode...
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
+nmap <Left>  :echoe "Use h"<CR>
+nmap <Right> :echoe "Use l"<CR>
+nmap <Up>    :echoe "Use k"<CR>
+nmap <Down>  :echoe "Use j"<CR>
 " ...and in insert mode
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
+imap <Left>  <ESC>:echoe "Use h"<CR>
+imap <Right> <ESC>:echoe "Use l"<CR>
+imap <Up>    <ESC>:echoe "Use k"<CR>
+imap <Down>  <ESC>:echoe "Use j"<CR>
 
 
-" YCM
-let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_enable_semantic_highlighting=1
