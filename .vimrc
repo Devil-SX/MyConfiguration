@@ -18,6 +18,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'PhilRunninger/nerdtree-visual-selection'
 
 Plug 'ycm-core/YouCompleteMe'
 
@@ -25,6 +26,12 @@ Plug 'preservim/tagbar'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
+" Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+
+" Verilog Plugs
+Plug 'vhda/verilog_systemverilog.vim'
+Plug 'HonkW93/automatic-verilog'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -113,14 +120,19 @@ set cursorline " 突出显示当前行
 set tabstop=2 " tab width 
 set shiftwidth=2	" shift width, default by 8( Too long!)
 set noerrorbells visualbell t_vb=  " annonying!
-set smartindent " 开启新行使用智能自动缩进
+
+set autoindent
+"set smartindent " 开启新行使用智能自动缩进
 
 
 " Map settings
 nmap <leader>q :q<CR>
 nmap <leader>w :wall<CR>
 nmap <leader>x :wqall<CR>
+" Insert blank line
+nmap <Space> o<Esc>
 
+" Plug settings
 " NerdTree
 nmap <leader>t :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
@@ -130,6 +142,21 @@ nmap <leader>b :TagbarToggle<CR>
 
 " EasyMotion
 nmap ss <Plug>(easymotion-s2)
+
+" Automatic Verilog
+" Snippet
+let g:atv_snippet_albpn_file = '~/.vim/template/albpn.v'
+let g:atv_snippet_albpn_pos = '2,5'
+nmap <C-a>pn[ <Plug>Atv_Snippet_AlBpn;
+let g:atv_snippet_albp_file = '~/.vim/template/albp.v'
+let g:atv_snippet_albp_pos = '1,3'
+nmap <C-a>p[ <Plug>Atv_Snippet_AlBp;
+let g:atv_snippet_alb_file = '~/.vim/template/alb.v'
+nmap <C-a>b[ <Plug>Atv_Snippet_AlB;
+" Instantance
+nmap <leader>i :call g:AutoInst(0)<Esc>
+nmap <leader>a :call g:AutoInst(1)<Esc>
+nmap <C-a>[ f(ci(/*AutoInst*/<Esc>
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
