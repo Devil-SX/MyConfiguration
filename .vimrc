@@ -15,23 +15,27 @@ Plug 'mhinz/vim-startify'
 
 Plug 'altercation/vim-colors-solarized'
 
+" Nerdtree
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'PhilRunninger/nerdtree-visual-selection'
 
 Plug 'ycm-core/YouCompleteMe'
-
 Plug 'preservim/tagbar'
-
 Plug 'easymotion/vim-easymotion'
 Plug 'Yggdroot/indentLine'
 " Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 
-" Verilog Plugs
+" Plug for Verilog
 Plug 'vhda/verilog_systemverilog.vim'
 Plug 'HonkW93/automatic-verilog'
+
+" Plug for Markdown
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
+" Use "MarkdownPreview" and "MarkdownPreviewStop" commands
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -131,6 +135,11 @@ nmap <leader>w :wall<CR>
 nmap <leader>x :wqall<CR>
 " Insert blank line
 nmap <Space> o<Esc>
+" Windows Settings
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-h> <C-w>h
+nmap <C-l> <C-w>l
 
 " Plug settings
 " NerdTree
@@ -147,16 +156,19 @@ nmap ss <Plug>(easymotion-s2)
 " Snippet
 let g:atv_snippet_albpn_file = '~/.vim/template/albpn.v'
 let g:atv_snippet_albpn_pos = '2,5'
-nmap <C-a>pn[ <Plug>Atv_Snippet_AlBpn;
+nmap <leader>albpn <Plug>Atv_Snippet_AlBpn;
 let g:atv_snippet_albp_file = '~/.vim/template/albp.v'
 let g:atv_snippet_albp_pos = '1,3'
-nmap <C-a>p[ <Plug>Atv_Snippet_AlBp;
+nmap <leader>albp <Plug>Atv_Snippet_AlBp;
 let g:atv_snippet_alb_file = '~/.vim/template/alb.v'
-nmap <C-a>b[ <Plug>Atv_Snippet_AlB;
+nmap <leader>alb <Plug>Atv_Snippet_AlB;
 " Instantance
 nmap <leader>i :call g:AutoInst(0)<Esc>
-nmap <leader>a :call g:AutoInst(1)<Esc>
-nmap <C-a>[ f(ci(/*AutoInst*/<Esc>
+nmap <leader>iall :call g:AutoInst(1)<Esc>
+nmap <leader>addi f(ci(/*AutoInst*/<Esc>
+nmap <leader>p :call g:AutoParaValue(0)<Esc>
+nmap <leader>pall :call g:AutoParaValue(1)<Esc>
+nmap <leader>addp f(ci(/*autoinstparam_value*/<Esc>
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
@@ -173,5 +185,4 @@ imap <Left>  <ESC>:echoe "Use h"<CR>
 imap <Right> <ESC>:echoe "Use l"<CR>
 imap <Up>    <ESC>:echoe "Use k"<CR>
 imap <Down>  <ESC>:echoe "Use j"<CR>
-
 
