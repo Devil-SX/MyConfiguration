@@ -1,7 +1,25 @@
-> 每一个Cool Coder都应该有自己的.vimrc！
+Store my configurations of `.bashrc`, `.vimrc` , etc
 
-Vim 这玩意，不用不知道，越用越上头！
+Use hard link to manage repository
 
-我也来分享分享我的Vim配置啦:-)
+# Files
 
-> 采用硬链接的方式管理.vimrc文件，这样不用在根目录下创建仓库了
+- `.bashrc` Bash initial file
+- `.vimrc` Vim initial file
+- `my.omp.json` [Oh-My-Posh](https://github.com/jandedobbeleer/oh-my-posh) theme file based on [amro](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/amro.omp.json) theme
+
+# Introduction
+
+## Bash
+
+(TODO)
+
+## Vim
+
+- Verilog 
+
+## Oh-My-Push
+
+Compared to amro, display Python Virtual Environment on prompt
+
+BTW, I recommand [jsoncrack](https://github.com/AykutSarac/jsoncrack.com) to view JSON files visually
