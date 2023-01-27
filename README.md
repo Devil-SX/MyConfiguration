@@ -6,7 +6,7 @@ Use hard link to manage repository
 
 - `.bashrc` Bash initial file
 - `.vimrc` Vim initial file
-- `my.omp.json` [Oh-My-Posh](https://github.com/jandedobbeleer/oh-my-posh) theme file based on [amro](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/amro.omp.json) theme
+- `my.omp.json` [Oh-My-Posh](https://github.com/jandedobbeleer/oh-my-posh) theme file based on [amro](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/amro.omp.json) 
 
 # Introduction
 
@@ -22,4 +22,4 @@ Use hard link to manage repository
 
 Compared to amro, display Python Virtual Environment on prompt
 
-BTW, I recommand [jsoncrack](https://github.com/AykutSarac/jsoncrack.com) to view JSON files visually
+BTW, I recommand [jsoncrack](https://github.com/AykutSarac/jsoncrack.com) to visualize JSON files

@@ -121,6 +121,7 @@ set number " 开启绝对行号
 set rnu " 开启相对行号
 
 set cursorline " 突出显示当前行
+set expandtab " set tab as space
 set tabstop=2 " tab width 
 set shiftwidth=2	" shift width, default by 8( Too long!)
 set noerrorbells visualbell t_vb=  " annonying!

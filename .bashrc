@@ -128,18 +128,21 @@ alias tomato='pomotroid --no-sandbox'
 alias bat='batcat'
 alias cat='bat --paging=never'
 alias xs='xsel -ib'
+alias sudo='sudo env PATH=$PATH' # set sudo $PATH
 
-# PATH
+# Variables
 export PATH=$VERILATOR_ROOT/bin:$PATH
 export PATH=/opt/riscv/bin:$PATH
 export PATH=~/mytools/shell:$PATH
 export PATH=~/intelFPGA/20.1/modelsim_ase/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 export NEMU_HOME=/home/devil/ysyx/ysyx-workbench/nemu
 export AM_HOME=/home/devil/ysyx/ysyx-workbench/abstract-machine
 export NPC_HOME=/home/devil/ysyx/ysyx-workbench/npc
 export VERILATOR_ROOT=~/verilator
 export NVBOARD_HOME=~/ysyx/ysyx-workbench/nvboard
+export all_proxy="http://127.0.0.1:7890" # face proxy problem  while using pip. Use "http" instead of "https" to avoid SSL vertification
 # oh my posh
 eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/my.omp.json)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=
