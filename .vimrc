@@ -12,8 +12,8 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 
 Plug 'mhinz/vim-startify'
-
 Plug 'altercation/vim-colors-solarized'
+Plug 'luochen1990/rainbow'
 
 " Nerdtree
 Plug 'preservim/nerdtree'
@@ -143,6 +143,8 @@ nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
 " Plug settings
+" Rainbow
+let g:rainbow_active = 1
 " NerdTree
 nmap <leader>t :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
@@ -170,6 +172,8 @@ nmap <leader>addi f(ci(/*AutoInst*/<Esc>
 nmap <leader>p :call g:AutoParaValue(0)<Esc>
 nmap <leader>pall :call g:AutoParaValue(1)<Esc>
 nmap <leader>addp f(ci(/*autoinstparam_value*/<Esc>
+command VerilogHelp echo "AutoInst:\\addi-\\i\nAutoPara:\\addp-\\p
+\\nBlock:\\albpn or albp or alb"
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
