@@ -35,8 +35,8 @@
           "type": "python",
           "style": "plain",
           "powerline_symbol": "\uE0B0",
-          "foreground": "#3155ce",
-          "template": " \uE235 {{ .Full }} "
+          "foreground": "#4B8BBE",
+          "template": " \uE235 {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} "
         }
       ],
       "type": "prompt"

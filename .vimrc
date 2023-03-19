@@ -133,7 +133,7 @@ set autoindent
 " Map settings
 nmap <leader>q :q<CR>
 nmap <leader>w :wall<CR>
-nmap <leader>x :wqall<CR>
+nmap <leader>x :wqall<CR> " 'ZZ' is more commonly used
 " Insert blank line
 nmap <Space> o<Esc>
 " Windows Settings

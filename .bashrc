@@ -128,9 +128,13 @@ alias tomato='pomotroid --no-sandbox'
 alias bat='batcat'
 alias cat='bat --paging=never'
 alias xs='xsel -ib'
+alias x="xclip -selection c"
+# Useage : echo "test" | x
 alias sudo='sudo env PATH=$PATH' # set sudo $PATH
+# Blog
 
 # Variables
+# PATH
 export PATH=$VERILATOR_ROOT/bin:$PATH
 export PATH=/opt/riscv/bin:$PATH
 export PATH=~/mytools/shell:$PATH
@@ -143,8 +147,35 @@ export NPC_HOME=/home/devil/ysyx/ysyx-workbench/npc
 export VERILATOR_ROOT=~/verilator
 export NVBOARD_HOME=~/ysyx/ysyx-workbench/nvboard
 export all_proxy="http://127.0.0.1:7890" # face proxy problem  while using pip. Use "http" instead of "https" to avoid SSL vertification
+export BLOG=~/share/obsidian/Blog/Blog_Resposity
+alias blog="cd ${BLOG} && ls"
 # oh my posh
 eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/my.omp.json)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=
 
-export NVBOARD_HOME=/home/devil/ysyx/ysyx-workbench/nvboard
+export PICGO=~/snap/picgo/current/.config/picgo
+# Java Settings
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+# Android Development
+export ANDROID_HOME=$HOME/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/devil/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/devil/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/devil/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/devil/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
