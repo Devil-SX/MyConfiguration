@@ -8,6 +8,7 @@ Use hard link to manage repository
 - `.vimrc` Vim configuration
 - `my.omp.json` [Oh-My-Posh](https://github.com/jandedobbeleer/oh-my-posh) theme file based on [amro](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/amro.omp.json) 
 - `.npmrc` Npm configuration
+- `sources.list` APT source configuration
 
 # Introduction
 

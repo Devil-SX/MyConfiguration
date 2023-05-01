@@ -116,7 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# 以下是额外添加的内容
+# 以下是额外添加的内容  
+# IM
+
 alias ope='nautilus'
 # open file explorer
 alias opec='nautilus -q'
@@ -129,15 +131,14 @@ alias bat='batcat'
 alias cat='bat --paging=never'
 alias xs='xsel -ib'
 alias x="xclip -selection c"
+alias ai="conda activate openai"
 # Useage : echo "test" | x
 alias sudo='sudo env PATH=$PATH' # set sudo $PATH
-# Blog
 
 # Variables
 # PATH
 export PATH=$VERILATOR_ROOT/bin:$PATH
 export PATH=/opt/riscv/bin:$PATH
-export PATH=~/mytools/shell:$PATH
 export PATH=~/intelFPGA/20.1/modelsim_ase/bin:$PATH
 export PATH=~/.local/bin:$PATH
 
@@ -147,8 +148,12 @@ export NPC_HOME=/home/devil/ysyx/ysyx-workbench/npc
 export VERILATOR_ROOT=~/verilator
 export NVBOARD_HOME=~/ysyx/ysyx-workbench/nvboard
 export all_proxy="http://127.0.0.1:7890" # face proxy problem  while using pip. Use "http" instead of "https" to avoid SSL vertification
-export BLOG=~/share/obsidian/Blog/Blog_Resposity
+# Blog Configuration
+export BLOG=~/share/Blog/Blog_Resposity
+export PATH=$PATH:$BLOG/node_modules/.bin
 alias blog="cd ${BLOG} && ls"
+
+alias save="vim ~/share/save.md"
 # oh my posh
 eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/my.omp.json)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=
@@ -157,11 +162,17 @@ export PICGO=~/snap/picgo/current/.config/picgo
 # Java Settings
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 # Android Development
-export ANDROID_HOME=$HOME/Android/sdk
+export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
+# Go
+export PATH=$PATH:/usr/local/go/bin
+# Arm GUN Toolchain
+export ARM_GCC=$HOME/gcc-arm-none-eabi-10.3-2021.10
+export PATH=$PATH:$ARM_GCC/bin
+export PATH=$PATH:~/Arduino
 
 
 # >>> conda initialize >>>
@@ -179,3 +190,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# Initialize Codex CLI
+if [ -f "$HOME/.codexclirc" ]; then
+    . "$HOME/.codexclirc"
+fi
